@@ -17,3 +17,8 @@ route.get('', (req: Request, res: Response) => {
 route.get('', (req: Request, res: Response) => {
   res.json({text:"Hello"})
 })
+
+route.post('/test-conflict', (req: Request, res: Response) => {
+  res.json({ success: true });
+});
+
