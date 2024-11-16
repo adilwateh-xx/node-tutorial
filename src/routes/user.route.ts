@@ -13,3 +13,7 @@ route.post('', (req: Request, res: Response) => {
 route.get('', (req: Request, res: Response) => {
   res.json({ success: true });
 });
+
+route.get('', (req: Request, res: Response) => {
+  res.json({text:"Hello"})
+})
