@@ -9,3 +9,7 @@ route.get('/test', (req: Request, res: Response) => {
 route.post('', (req: Request, res: Response) => {
   res.json({ success: true });
 });
+
+route.get('', (req: Request, res: Response) => {
+  res.json({ success: true });
+});
