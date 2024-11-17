@@ -1,24 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
+import { UserController } from '../controllers/user.controller';
 
-export const route = Router();
+export const UserRoute = Router();
 
-route.get('/test', (req: Request, res: Response) => {
-  res.json({ test: 'test' });
-});
-
-route.post('', (req: Request, res: Response) => {
-  res.json({ success: true });
-});
-
-route.get('', (req: Request, res: Response) => {
-  res.json({ success: true });
-});
-
-route.get('', (req: Request, res: Response) => {
-  res.json({text:"Hello"})
-})
-
-route.post('/test-conflict', (req: Request, res: Response) => {
-  res.json({ success: true });
-});
-
+UserRoute.post('/', UserController.saveUser);
+UserRoute.get('/', UserController.getUser);
+UserRoute.get('/:id', UserController.getUserById);
+UserRoute.put('/:id', UserController.updateUser);
+UserRoute.delete('/:id', UserController.deleteUser);
